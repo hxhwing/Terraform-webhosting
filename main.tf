@@ -254,7 +254,7 @@ resource "aws_launch_template" "webserver-template" {
 # Create Auto Scaling Group
 resource "aws_autoscaling_group" "Demo-ASG-tf" {
   name		     = "ASG-tf"
-  desired_capacity   = 1
+  desired_capacity   = 2
   max_size           = 2
   min_size           = 0
   force_delete       = true
