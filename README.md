@@ -2,15 +2,15 @@
 
  Terrform 示例模版，在 AWS 上部署一套简单的 Webhosting 架构，具体如下图：
 
-![Architecture](/Architectures/Terraform-webhosting.png)
+![Architecture](/Architecture/Terraform-webhosting.png)
 
 
 示例模版包括：
- - main.tf:  主模版文件，包含所有需要部署的资源
- - variables.tf:  预定义变量，并声明了多个Credential Profile，通过在 main.tf 中切换 Profile，可部署到不同的 AWS 环境中
- - Install_nginx.sh:  EC2 启动的 User Data 脚本
- - outputs.tf:  定义 terraform 部署完成后需要输出的结果，比如 ALB 的 URL
- - terraform.tfvars: 可用于覆盖 variables.tf 中声明的变量赋值
+ - **main.tf:**  主模版文件，包含所有需要部署的资源
+ - **variables.tf:**  预定义变量，并声明了多个Credential Profile，通过在 main.tf 中切换 Profile，可部署到不同的 AWS 环境中
+ - **Install_nginx.sh:**  EC2 启动的 User Data 脚本
+ - **outputs.tf:**  定义 terraform 部署完成后需要输出的结果，比如 ALB 的 URL
+ - **terraform.tfvars:** 可用于覆盖 variables.tf 中声明的变量赋值
   
        
 ## 执行 Terraform:
