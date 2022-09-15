@@ -22,10 +22,10 @@ phases:
 
   build:
     commands:
-      # - terraform apply -auto-approve
-      - terraform destroy -auto-approve
+      - terraform apply -auto-approve
+      # - terraform destroy -auto-approve
 
   post_build:
     commands:
-      # - echo terraform apply completed on $(date)
-      - echo terraform destroy completed on $(date)
+      - echo terraform apply completed on $(date)
+      # - echo terraform destroy completed on $(date)
