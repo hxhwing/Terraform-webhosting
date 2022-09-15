@@ -1,8 +1,8 @@
 # Configure the AWS Provider
-provider "aws" {
-   region  = var.region
-   profile = var.profile2
-}
+# provider "aws" {
+#    region  = var.region
+#    profile = var.profile2
+# }
 
 # Create VPC
 resource "aws_vpc" "main" {
