@@ -229,7 +229,7 @@ resource "aws_launch_template" "webserver-template" {
   name   = "webserver-template"
   image_id      =  var.ami
   instance_type = "t2.micro"
-  key_name	= var.keyname2
+  key_name	= var.keyname1
   vpc_security_group_ids = [aws_security_group.webserver_sg.id]
   
   # block_device_mappings {
