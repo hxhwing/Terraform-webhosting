@@ -36,3 +36,34 @@ terraform apply (--auto-approve)
 ```
 terraform destroy
 ```
+
+## 基于 CodePipeline 和 CodeDeploy 实现 IaC 自动化:
+
+该模版可借助 CodePipeline 自动监控 Github Repo的事件，自动化调度 IaC 的资源部署和管理流程，在 CodeDeploy 中执行 Terraform 命令对资源进行部署和修改。
+以下为 CodeDeploy 执行的命令。
+
+```
+version: 0.2
+
+phases:
+
+  install:
+    commands:
+      # for Amazon Linux build runtime
+      - sudo yum install -y yum-utils
+      - sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+      - sudo yum -y install terraform
+  pre_build:
+    commands:
+      - terraform init
+
+  build:
+    commands:
+      - terraform apply -auto-approve
+      # - terraform destroy -auto-approve
+
+  post_build:
+    commands:
+      - echo terraform apply completed on $(date)
+      # - echo terraform destroy completed on $(date)
+```
